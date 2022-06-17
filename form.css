@@ -1,0 +1,185 @@
+/* Reset */ html { box-sizing:border-box } *, *:before, *:after { box-sizing:inherit } body { margin:0 } button{ background:inherit; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer; user-select: none }
+
+body { 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  user-select: none;
+}
+
+#wrap-all {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  display: none; /* SET FLEX BY JS */
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+header div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+header button {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: rgb(39, 109, 39);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 0 0.6rem rgba(211, 211, 211, 0.5);
+}
+
+#left-menu button {
+  background-color: rgb(62, 98, 198)
+}
+
+header button i {
+  font-size: x-large;
+}
+
+main {
+  width: 600px;
+  margin: 3rem 0;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 12px gray;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#group-drop-areas {
+  display: flex;
+  gap: 1.5rem;
+}
+@media only screen and (max-width: 600px) {
+  main {
+    width: 360px;
+  }
+  #group-drop-areas {
+    flex-direction: column;
+  }
+}
+
+.drop-area {
+  min-width: 48%;
+  min-height: 180px;
+  padding: 0 0.3rem;
+  border-radius: 12px;
+  background-color: AliceBlue;
+  border: steelblue 3px dashed;
+  color: steelblue;
+  display: flex;
+  flex-direction: column;
+  overflow-x: visible;
+  align-self: start; /* Don't stretch if sibling grows */
+}
+
+.drop-area.highlight {
+  border-color: purple;
+  background-color: white;
+}
+
+.drop-area .uploader {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.uploader i { font-size: 60px; margin: 9px; opacity: 0.5;}
+.uploader p { text-align: center; }
+.uploader label {
+  color: steelblue;
+  font-weight: bold;
+  font-size: larger;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.uploader label:hover {
+  opacity: 0.8;
+}
+
+.uploader.disabled {
+  display: none;
+}
+
+input[type="file"] {
+display: none;
+}
+
+.clear-button {
+  display: none;
+}
+
+.uploader.disabled~.clear-button {
+  font-size: medium;
+  text-decoration: underline;
+  margin: 0.3rem;
+  display: block;
+  text-align: right;
+  color: steelblue;
+}
+    
+.card {
+  flex-shrink: 0;
+  height: 1.8rem;
+  font-size: smaller;
+  padding: 0.3rem 0.5rem;
+  background-color: slategray;
+  color: white;
+  border: slategray solid 0.2rem;
+  border-radius: 6px;
+  margin: 0.2rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card:hover { 
+  cursor: pointer;
+  opacity: 0.9;
+  }
+
+.checkbox-label-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label-wrapper input {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1ch;
+  accent-color: steelblue;
+}
+
+#main-buttons {
+  display: flex;
+  justify-content: center;
+}
+#main-buttons button {
+  width: 48%;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+#go-button { background-color: steelblue }
+#go-button:disabled { background-color: lightgray; cursor: not-allowed }
+
+button:hover {
+  opacity: 0.8;
+}

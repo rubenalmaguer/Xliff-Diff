@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xDiff</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="tables.css">
+  <link rel="stylesheet" href="modal.css">
+  <script src="diff.js" defer></script>
+  <script src="events.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+<div id="wrap-all">
+    <dialog id="modal">
+      <!-- https://loading.io/css/ -->
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      <p>Please wait</p>
+    </dialog>
+    <header id="sticky-menu">
+      <div id="left-menu">
+        <button onclick="/*if(confirm('Reset?'))*/ location.reload()"><i class="fas fa-redo"></i> <!-- Clear --></button>
+        <button onclick="traverseReports('previous')"><i class="fas fa-arrow-left"></i> <!-- Previous --></button>
+        <button onclick="traverseReports('next')"><i class="fas fa-arrow-right"></i> <!-- Next --></button>
+      </div>
+      <div id="right-menu">
+        <button id="gs-button" onclick="makeIntoSpreadsheet('open')"><i class="fab fa-google-drive"></i> <!-- See in Google Sheets --></button>
+        <button id="xl-button" onclick="makeIntoSpreadsheet('save')"><i class="fas fa-arrow-alt-circle-down"></i> <!-- Download as XLSX --></button>
+      </div>
+    </header>
+    <main>
+      <div id="group-drop-areas">
+        <section id="drop-area-1" class="drop-area">
+          <div class="uploader">
+            <label>
+              Choose original files <input type="file" id="file-picker-2" accept=".sdlxliff" multiple>
+            </label>
+            or drag them here.
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+          
+          <button class="clear-button">Clear</button>
+          <div id="cards-1" class="cards">
+          </div>
+        </section>
+
+        <section id="drop-area-2" class="drop-area">
+          <div class="uploader">
+            <label>
+              Choose revised files <input type="file" id="file-picker-2" accept=".sdlxliff" multiple>
+            </label>
+            or drag them here.
+            <i class="fas fa-cloud-upload-alt"></i>
+          </div>
+
+          <button class="clear-button">Clear</button>
+          <div id="cards-2" class="cards">
+          </div>
+        </section>
+      </div>
+
+      <section id="options">
+        <span class="checkbox-label-wrapper">
+          <input id="ck-show-identical" type="checkbox">
+          <label for="ck-show-identical">Include identical segments</label>
+        </span>
+      </section>
+
+      <section id="main-buttons">
+        <button id="go-button" onclick="go()" disabled>Go</button>
+      </section>
+    </main>
+
+    <div id="reports-area"></div>
+  
+  </div>
+</body>
+</html>

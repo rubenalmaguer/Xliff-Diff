@@ -1,0 +1,47 @@
+#reports-area {
+  padding: 1.5rem;
+}
+
+.report-div {
+  padding: 1.5rem;
+  /* border: black solid 1px; */
+  margin-bottom: 5rem;
+  box-shadow: 0 0 1rem gray;
+}
+
+table {
+  margin: 3rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed; /* !! */
+  word-wrap: break-word;
+  white-space: pre-wrap; /* !!!!!!!!!!!!!!!!!!!!!!!!!! CRITICAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: steelblue;
+  color: white;
+}
+
+table th:nth-child(1) {
+  width:8ch;
+}
+
+td, th {
+  display: none;
+}
+
+.column-show.row-show { /* Only show cell if both row/column set as visible*/
+  display: revert;
+}
