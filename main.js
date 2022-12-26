@@ -225,13 +225,11 @@ function getUniqueIds(srcSegments1, srcSegments2) {
 
   
 function styleTagsAllaTrados(xmlString) {
-  console.log(xmlString)
   xmlString = xmlString
   .replace(/<g[^>]+id="([^>]+)">/g, '<span tag-id="$1" style="color:purple">▶</span>')
   .replace(/<\/g>/g, '<span style="color:purple">◀</span>')
   .replace(/<x[^>]+id="([^>]+)"\/>/g, '<span placeholder-id="$1" style="color:purple">▰</span>')
 
-  console.log(xmlString)
   return xmlString
 }
 
@@ -259,7 +257,7 @@ function makeIntoSpreadsheet(action) {
 
 function autoRequest() {
   //FYI: Folder/Script URL: https://drive.google.com/drive/u/1/folders/1DSPhBQ_0h-wzBPYMdgzfeg5t70bB71-J
-  let DEPLOYMENT_URL = 'https://script.google.com/macros/s/AKfycbxDJ01NFxYiaT1lPhMuvTwXPrc23gEe3N22WdKpt8lseRF6EzZm3RJKNSMMrg68QYi1Zw/exec';
+  let DEPLOYMENT_URL = 'https://script.google.com/macros/s/AKfycbzktEY9XuX5Cx_TGhAMwtdC3HLo6P-kMtJgl7EvEeFcLZft3ay_tb5KS7qtPy400rx5bA/exec';
 
   let data = getTableDataAsJSON();
   data = JSON.stringify(data);
