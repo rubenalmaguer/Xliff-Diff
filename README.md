@@ -5,4 +5,4 @@ Features:
 - Navigate to next/previous report.
 
 
-<font size="3">[Go to the site](https://xdiff.netlify.app//)</font>
+<font size="3">[Go to the site](https://xdiff.netlify.app/)</font>
